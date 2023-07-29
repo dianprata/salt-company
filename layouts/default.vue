@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-lg font-sans">
+  <div class="font-sans">
     <NavBar />
     <main>
       <slot />

@@ -21,19 +21,14 @@ const sliderItems = [
   },
 ]
 const currentPageSlider = ref(1)
-
-function scrollToSlider() {
-  const slider = document.getElementById('slider')
-  slider?.scrollIntoView({ behavior: 'smooth' })
-}
 </script>
 
 <template>
   <div>
     <Hero />
-    <ScrollToBottom class="relative z-100 mx-auto cursor-pointer" @click="scrollToSlider" />
     <Slider
       id="slider"
+      class="relative z-50"
       :items="sliderItems" :current-page="currentPageSlider"
       @click:next="currentPageSlider += 1"
       @click:prev="currentPageSlider -= 1"

@@ -6,7 +6,7 @@ function scrollTo(id: string) {
 </script>
 
 <template>
-  <footer class="relative bg-[#07477A] px-8 py-9">
+  <footer class="relative overflow-hidden bg-[#07477A] px-8 py-9">
     <div class="relative z-10">
       <LogoWhite class="mb-8" />
       <div class="mb-8 bg-white px-7 py-6">
@@ -18,7 +18,7 @@ function scrollTo(id: string) {
           Jl. Lembong No 8 Kel. Braga Kec. Sumur Bandung, Kota Bandung, Jawa Barat
         </div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col md:flex-row md:gap-6">
         <div class="cursor-pointer leading-[48px] text-white" @click="scrollTo('slider')">
           Who We Are
         </div>

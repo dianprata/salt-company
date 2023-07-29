@@ -34,7 +34,7 @@ function prev() {
 </script>
 
 <template>
-  <section id="our-speciality" class="bg-[#509FDD] px-5 pb-12 pt-9">
+  <section id="our-speciality" class="bg-[#509FDD] px-5 pb-12 pt-9 text-center">
     <div class="bg-white px-8 py-11">
       <h1 class="text-primary mb-3 text-2xl font-bold uppercase">
         Our Speciality
@@ -43,7 +43,7 @@ function prev() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod libero vel leo auctor, in venenatis nulla consequat. Sed commodo nunc sit amet congue aliquam.
       </p>
       <div class="overflow-x-hidden">
-        <div class="mb-20 flex flex-nowrap" :style="{ width: `${(50 * (items.length - 1)) + 300}px` }">
+        <div class="mb-20 flex flex-nowrap mx-auto" :style="{ width: `${(50 * (items.length - 1)) + 300}px` }">
           <div
             v-for="item in items" :key="item.title"
             class="flex flex-col items-center justify-center gap-4 text-center"
