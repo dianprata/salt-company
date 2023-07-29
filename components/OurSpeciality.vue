@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { IconAccesories, IconExhaust, IconSpeedImprovement } from '#components'
 
 const items = [
@@ -20,7 +20,15 @@ const items = [
   },
 ]
 
-const activePage = ref(2)
+const activePage = ref(1)
+
+const transform3dStyle = computed(() => {
+  const halfWrapper = 400 / 2
+  const widthItem = 180
+  const transformDefault = halfWrapper - (widthItem / 2)
+  const transform = `${activePage.value > 1 ? -((widthItem * (activePage.value - 1)) - transformDefault) : transformDefault}px`
+  return `transform: translate3d(${transform}, 0, 0)`
+})
 
 function next() {
   if (activePage.value < items.length)
@@ -42,12 +50,14 @@ function prev() {
       <p class="mb-8 text-sm font-light leading-6 text-[#303030]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod libero vel leo auctor, in venenatis nulla consequat. Sed commodo nunc sit amet congue aliquam.
       </p>
-      <div class="overflow-x-hidden">
-        <div class="mb-20 flex flex-nowrap mx-auto" :style="{ width: `${(50 * (items.length - 1)) + 300}px` }">
+      <div class="relative mx-auto max-w-[400px] overflow-hidden">
+        <div
+          class="mx-auto mb-20 h-full w-full flex transition-transform duration-500"
+          :style="transform3dStyle"
+        >
           <div
             v-for="item in items" :key="item.title"
-            class="flex flex-col items-center justify-center gap-4 text-center"
-            :style="{ width: activePage === item.id ? '300px' : '50px' }"
+            class="w-[180px] flex shrink-0 flex-col items-center justify-center gap-4 text-center"
           >
             <component :is="item.icon" />
             <span>{{ item.title }}</span>

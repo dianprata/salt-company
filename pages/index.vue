@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ScrollToBottom from '~/components/icon/ScrollToBottom.vue'
 import OurSpeciality from '~/components/OurSpeciality.vue'
 import OurValues from '~/components/OurValues.vue'
 
@@ -37,3 +36,7 @@ const currentPageSlider = ref(1)
     <OurSpeciality />
   </div>
 </template>
+
+<style scoped lang="scss">
+
+</style>
